@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Alumnos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gestión de Alumnos</h1>
+
+    <section id="altaAlumno">
+        <h2>Agregar Alumno</h2>
+        <form id="studentForm">
+            <label>Nombre: <input type="text" id="name" style="width: 200px;" required></label><br>
+            <label>Apellidos: <input type="text" id="surname" style="width: 192px;" required></label><br>
+            <label>Edad: <input type="number" id="age" style="width: 219px;" required></label><br>
+            <label>Matrícula: <input type="number" id="matricula" style="width: 191px;" required></label><br>
+            <button type="submit" class="btnAgregarAlumno">Agregar Alumno</button>
+        </form>
+    </section>
+
+    <section id="tablaAlumnos">
+        <h2>Lista de Alumnos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre y Apellido</th>
+                    <th>Edad</th>
+                    <th>Matrícula</th>
+                    <th>Materias Inscritas</th>
+                    <th>Calificaciones</th>
+                    <th>Grupo Asignado</th>
+                </tr>
+            </thead>
+            <tbody id="alumnosTable">
+
+            </tbody>
+        </table>
+    </section>
+
+    <section id="inscripcion">
+        <h2>Inscripción a materias</h2>
+        <div>
+            <label>Seleccionar Alumno:
+                <select id="selectAlumno">
+                </select>
+            </label>
+            <label>Materia:
+                <select id="selectMateria">
+                    <option>Español</option>
+                    <option>Matemáticas</option>
+                    <option>Geografía</option>
+                    <option>Ciencias</option>
+                    <option>Ética</option>
+                </select>
+            </label>
+            <button id="inscribirBtn">Inscribir en Materia</button>
+        </div>
+        <div>
+            <h2>Calificar alumnos</h2>
+            <label>Seleccionar Alumno:
+                <select id="selectAlumnoCalif"></select>
+            </label>
+            <label>Materia:
+                <select id="selectMateriaCalif">
+                    <option>Español</option>
+                    <option>Matemáticas</option>
+                    <option>Geografía</option>
+                    <option>Ciencias</option>
+                    <option>Ética</option>
+                </select>
+            </label>
+            <label>Calificación: <input type="number" id="inputCalificacion" min="0" max="10" step="0.1"></label>
+            <button id="asignarCalifBtn">Asignar Calificación</button>
+        </div>
+        <div>
+            <h2>Asignación de grupos</h2>
+            <label>Nombre del Grupo: <input type="text" id="nombreGrupo"></label>
+            <button id="crearGrupoBtn">Crear Grupo</button>
+            <label>Seleccionar Alumno:
+                <select id="selectAlumnoGrupo">
+                </select>
+            </label>
+            <label>Grupo:
+                <select id="selectGrupo">
+                </select>
+            </label>
+            <button id="asignarGrupoBtn">Asignar Grupo</button>
+        </div>
+    </section>
+
+    <section id="busquedaEstadisticas">
+        <h2>Búsqueda y Estadísticas</h2>
+        <div>
+            <label>Buscar por Nombre: <input type="text" id="buscarNombre"><button id="buscarNombreBtn">Buscar</button></label>
+        </div>
+        <div>
+            <label>Buscar por Apellido: <input type="text" id="buscarApellido"><button id="buscarApellidoBtn">Buscar</button></label>
+        </div>
+        <div>
+            <label>Buscar por Matrícula: <input type="text" id="buscarMatricula"><button id="buscarMatriculaBtn">Buscar</button></label>
+        </div>
+        <div>
+            <button id="promedioAlumnoBtn">Obtener Promedio del Alumno</button>
+            <button id="promedioGrupoBtn">Obtener Promedio del Grupo</button>
+        </div>
+        <div>
+            <button id="ordenarAscBtn">Ordenar Alumnos Ascendente</button>
+            <button id="ordenarDescBtn">Ordenar Alumnos Descendente</button>
+        </div>
+        <div id="output"></div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
